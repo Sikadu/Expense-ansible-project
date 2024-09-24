@@ -50,7 +50,7 @@
     - name: Copy backend service
       ansible.builtin.copy:
        src: backend.service
-       dest: /etc/foo.conf/etc/systemd/system/backend.service
+       dest: /etc/systemd/system/backend.service
  
     - name: ansible to install pymysql
       ansible.builtin.pip:
