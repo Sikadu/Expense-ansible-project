@@ -16,13 +16,13 @@
 
     - name: remove html
       ansible.builtin.file:
-      path: /usr/share/nginx/html/*
-      state: absent
+       path: /usr/share/nginx/html/*
+       state: absent
     
     - name: Download foo.conf
       ansible.builtin.get_url:
-      url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
-      dest: /tmp/frontend.zip
+       url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
+       dest: /tmp/frontend.zip
 
      
 
@@ -34,8 +34,8 @@
 
     - name: Copy expense configuration
       ansible.builtin.copy:
-      src: expense.conf
-      dest: /etc/nginx/default.d/expense.conf 
+       src: expense.conf
+       dest: /etc/nginx/default.d/expense.conf 
 
     - name: restart nginx
       ansible.builtin.service:
