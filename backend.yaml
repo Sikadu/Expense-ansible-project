@@ -28,13 +28,13 @@
     
     - name: create app directory
       ansible.builtin.file:
-      path: /app
-      state: directory
+       path: /app
+       state: directory
 
     - name: download the url
       ansible.builtin.get_url:
-      url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
-      dest: /tmp/backend.zip
+       url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
+       dest: /tmp/backend.zip
       
     - name: unarchive the file
       ansible.builtin.unarchive:
@@ -49,9 +49,9 @@
 
     - name: Copy backend service
       ansible.builtin.copy:
-      src: backend.service
-      dest: /etc/foo.conf/etc/systemd/system/backend.service
-
+       src: backend.service
+       dest: /etc/foo.conf/etc/systemd/system/backend.service
+ 
     - name: ansible to install pymysql
       ansible.builtin.pip:
         name:
